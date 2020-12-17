@@ -9,16 +9,21 @@ A compilation of iOS topics
 * Suspended - Application is in background and not executing code.
 
 ## Memory Management
-### ARC
-* Automatic Reference Counting - used by iOS to track and manage memory usage. To make sure that instances don’t disappear while they are still needed and is done via reference counting. ARC tracks how many properties, constants, and variables are currently referring to each class instance. ARC will not deallocate an instance as long as at least one active reference to that instance still exists.
-### Weak vs Strong
-* Strong reference - declaring a strong referance to a class instance will increase its reference count of that instance by 1
-* Weak reference - declaring a weak reference to a class instance will not increase its reference count
+### ARC (Automatic Reference Counting)
+* used by iOS to track and manage memory usage. To make sure that instances don’t disappear while they are still needed and is done via reference counting. ARC tracks how many properties, constants, and variables are currently referring to each class instance. ARC will not deallocate an instance as long as at least one active reference to that instance still exists. ARC is a compile time process, it automatically pads retain and release calls on compile time
+### Weak vs Strong Reference
+* Strong - declaring a strong referance to a class instance will increase its reference count of that instance by 1
+* Weak - declaring a weak reference to a class instance will not increase its reference count
 
 ## Concurrent Programming
-### GCD
+### GCD (Grand Central Dispatch)
+* GCD is a mechanism that allows concurrent programming via the use of DispatchQueues
 ### OperationQueue
+* OperationQueue is a mechanism that allows concurrent programming via the use of Operation and OperationQueues
 ### Mutex vs Lock vs Semaphores
+* mutex -
+* lock -
+* semaphores - 
 
 ## Persistency
 ### UserDefaults
