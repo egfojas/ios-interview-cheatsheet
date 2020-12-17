@@ -10,7 +10,10 @@ A compilation of iOS topics
 
 ## Memory Management
 ### ARC
+* Automatic Reference Counting - used by iOS to track and manage memory usage. To make sure that instances don’t disappear while they are still needed and is done via reference counting. ARC tracks how many properties, constants, and variables are currently referring to each class instance. ARC will not deallocate an instance as long as at least one active reference to that instance still exists.
 ### Weak vs Strong
+* Strong reference - declaring a strong referance to a class instance will increase its reference count of that instance by 1
+* Weak reference - declaring a weak reference to a class instance will not increase its reference count
 
 ## Concurrent Programming
 ### GCD
