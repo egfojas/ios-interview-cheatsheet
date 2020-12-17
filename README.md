@@ -14,6 +14,11 @@ A compilation of iOS topics
 ### Weak vs Strong Reference
 * Strong - declaring a strong referance to a class instance will increase its reference count of that instance by 1
 * Weak - declaring a weak reference to a class instance will not increase its reference count
+### Atomic vs Non-Atomic
+### Property descriptors
+* Assign - retains the current reference count, can only be used on primitive data types (Int, Double, Float)
+* Copy - retains the current reference count if object is immutable, otherwise creates a new instance copy of old
+* Readonly - value cannot be changed onced assigned, will crash if done.
 
 ## Concurrent Programming
 ### GCD (Grand Central Dispatch)
@@ -31,15 +36,21 @@ A compilation of iOS topics
 4. Background: This represents tasks that the user is not directly aware of. Use it for prefetching, maintenance, and other tasks that don’t require user interaction and aren’t time-sensitive. This will get mapped into the background priority global queue.
  #### Asynchronous vs Synchronous
 * Synchronous blocks the calling queue and returns the control to it after executing the task. While Asynchronous does not block the calling queue and returns the control immediately without waiting for the task to complete.
-
+ #### DispatchWorkItem
+* DispatchWorkItem - A DispatchWorkItem encapsulates work to be performed on a dispatch queue or a dispatch group. It is primarily used in scenarios where we require the capability of delaying or canceling a block of code from executing. It lets us cancel an enqueued task, however, we can cancel the task only before it reaches the head of a queue and starts executing. It can also be used to add dependencies between work items via the use of notify.
 * Dispatch Barrier - a DispatchWorkitem with a flag set to .barrier can be used to make a concurrent queue behave like a serial queue. All Tasks before the barrier must be completed first before executing work blocks submitted after the barrier.
 
 ### OperationQueue
 * OperationQueue is a mechanism that allows concurrent programming via the use of Operation and OperationQueues
+* Built on top of GCD. Adds a little extra overhead compared to GCD, but you can add dependency among various operations and re-use, cancel or suspend them.
+
+### GCD vs OperationQueue
+* When to use each, OperationQueue is built on top of GCD implying thus if you are using OperationQueue you are implicitly using GCD as well. When it comes to the pros of OperationQueue, it is a higher level API which is generally recommended by apply to be used. It also offer out-of-the box support for operation dependencies, pausing, cancelling and resuming operations. OperationQueue is also KVO compliant which can help in observing queue states. On the other hand, GCD is a low-level api thus it is faster compared to the latter. Grand Central Dispatch is ideal if you just need to dispatch a block of code to a serial or concurrent queue. If you don't want to go through the hassle of creating an NSOperation subclass for a trivial task, then Grand Central Dispatch is a great alternative.
+
 ### Mutex vs Lock vs Semaphores
-* mutex -
-* lock -
-* semaphores - 
+* mutex - lock that can only be used by a single thread at any given time, automatically unlocks when execution goes out of scope of declaration.
+* lock - lock can only be obtained by a single thread and requires manual locking and unlocking of protected object
+* semaphores - semaphores are like locks with the difference of, that you can have multiple keys to access a protected object. Once all available keys are used, other threads must wait for a key to be freed up before they can access a protected object.
 
 ## Persistency
 ### UserDefaults
@@ -67,8 +78,8 @@ A compilation of iOS topics
 * deinit
 
 ## Design Patterns
-* Singleton -  single instance - UserDefaults, UIApplication
-* Facade - Easy swap (network, database)
+* Singleton -  single instance - UserDefaults, UIApplication, NSNotificationCenter. Pros and Cons - Easy to use, can be dangerous because of it due to vulnerability to changes from multiple access points.
+* Facade - Using interfaces/protocols to hide concrete implementations thus allowing for higher-level object to not depend on lower-level object (network framework, database client)
 * Factory - builder, use enums, same base class or protocol confirmation
 * Delegation - UITableView
 * Observer - Rx, Combine, KVO
