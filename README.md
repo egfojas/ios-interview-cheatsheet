@@ -18,6 +18,9 @@ A compilation of iOS topics
 ## Concurrent Programming
 ### GCD (Grand Central Dispatch)
 * GCD is a mechanism that allows concurrent programming via the use of DispatchQueues
+⋅⋅⋅Concurrent - executes code blocks concurrently, meaning order of execution and completion of codeblocks are not guaranteed to be the same as order of when they were dispatched
+⋅⋅⋅Serial - executes code blocks serially, meaning, order of execution and completion of codeblocks are guarateed to follow the order of when they were dispatched
+
 ### OperationQueue
 * OperationQueue is a mechanism that allows concurrent programming via the use of Operation and OperationQueues
 ### Mutex vs Lock vs Semaphores
