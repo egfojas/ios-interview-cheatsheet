@@ -8,6 +8,33 @@ A compilation of iOS topics
 * Background - Application is in background and executing code 
 * Suspended - Application is in background and not executing code.
 
+## General iOS Topics
+* In out - allows function to modify parameter
+* Open vs final - can/cannot subclass/override
+* Private, internal, public, fileprivate
+* Non-atomic, atomic - thread safety, speed
+* KVO = key value observing
+* KVC = key value coding, path and keys
+* Dynamic dispatch - decides runtime which method or function to invoke
+* Self vs _ =  _ direct instance, self calls getter and setter
+* Blocks
+
+## Swift
+* Struct vs class
+* Enums - Raw value, associated value
+* Protocols - can inherit, can be extended, can be given default implementation
+* Generics - 
+* Associated Type
+* Opaque Type
+* Property Wrappers - cool stuff (auto capitalised, auto save) wrapped value
+
+## Objective-C
+* @dynamic - getter/setter will be provided run time //assoc object
+* @synthesize - compiler generate getter/setter
+* Categories - add methods to existing class https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/CustomizingExistingClasses/CustomizingExistingClasses.html
+* Associated object - allows developers to add custom properties to existing classes in categories. https://nshipster.com/associated-objects/
+* Swizzling - Method swizzling is the process of changing the implementation of an existing selector. It’s a technique made possible by the fact that method invocations in Objective-C can be changed at runtime, by changing how selectors are mapped to underlying functions in a class’s dispatch table. https://nshipster.com/method-swizzling/
+
 ## Memory Management
 ### ARC (Automatic Reference Counting)
 * used by iOS to track and manage memory usage. To make sure that instances don’t disappear while they are still needed and is done via reference counting. ARC tracks how many properties, constants, and variables are currently referring to each class instance. ARC will not deallocate an instance as long as at least one active reference to that instance still exists. ARC is a compile time process, it automatically pads retain and release calls on compile time
