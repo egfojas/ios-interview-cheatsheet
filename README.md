@@ -22,3 +22,9 @@ A compilation of iOS topics
 ### Files
 ### CoreData
 ### Keychains
+
+## Design Patterns
+
+## App Architectures
+
+## SOLID Principles
