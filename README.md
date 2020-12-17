@@ -7,3 +7,18 @@ A compilation of iOS topics
 * Active - Application is in foreground and is receiving events.
 * Background - Application is in background and executing code 
 * Suspended - Application is in background and not executing code.
+
+## Memory Management
+### ARC
+### Weak vs Strong
+
+## Concurrent Programming
+### GCD
+### OperationQueue
+### Mutex vs Lock vs Semaphores
+
+## Persistency
+### UserDefaults
+### Files
+### CoreData
+### Keychains
