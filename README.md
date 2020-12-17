@@ -23,8 +23,19 @@ A compilation of iOS topics
 ### CoreData
 ### Keychains
 
+## User Intefaces
+### Storyboard vs XIB vs NIB
+### Autolayout
+### Animations
+### View Lifecycle
+
 ## Design Patterns
 
 ## App Architectures
 
 ## SOLID Principles
+* Single Responsibility
+* Open-Close Principle
+* Linskov Substitution
+* Interface Segregation
+* Dependency Injection
