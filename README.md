@@ -16,21 +16,34 @@ A compilation of iOS topics
 * KVO = key value observing
 * KVC = key value coding, path and keys
 * Dynamic dispatch - decides runtime which method or function to invoke
-* Self vs _ =  _ direct instance, self calls getter and setter
 * Blocks
 
 ## Swift
-* Struct vs class
-* Enums - Raw value, associated value
+* Struct - 
+ * Value type 
+ * Immutable  
+ * https://docs.swift.org/swift-book/LanguageGuide/ClassesAndStructures.html
+* Class - 
+ * Reference type 
+ * Mutable
+ * Can inherit from another class.
+ * Classes allows type checking (keyword is) to check if an instance is of a subclass type.
+ * Has deinitializers
+ * Can have more than 1 reference count
+ * https://docs.swift.org/swift-book/LanguageGuide/ClassesAndStructures.html
+* Any - 
+* AnyObject - 
+* Enumerations - Raw value, associated value
 * Protocols - can inherit, can be extended, can be given default implementation
 * Generics - 
-* Associated Type
-* Opaque Type
+* Associated Type -
+* Opaque Type -
 * Property Wrappers - cool stuff (auto capitalised, auto save) wrapped value
 
 ## Objective-C
 * @dynamic - getter/setter will be provided run time //assoc object
-* @synthesize - compiler generate getter/setter
+* @synthesize - compiler generate getter/setter. Allows us to access a property via `self.` without the need to explicitly provide getter and setter functions.
+* Self vs _ =  `_property` direct instance, `self.property` calls getter and setter functions
 * Categories - add methods to existing class https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/CustomizingExistingClasses/CustomizingExistingClasses.html
 * Associated object - allows developers to add custom properties to existing classes in categories. https://nshipster.com/associated-objects/
 * Swizzling - Method swizzling is the process of changing the implementation of an existing selector. It’s a technique made possible by the fact that method invocations in Objective-C can be changed at runtime, by changing how selectors are mapped to underlying functions in a class’s dispatch table. https://nshipster.com/method-swizzling/
@@ -94,15 +107,17 @@ A compilation of iOS topics
 * priorities
 ### Animations
 ### View Lifecycle
+* loadViewIfNeeded
 * loadView
 * viewDidLoad
-* layoutSubviews
-* viewWillLayoutSubviews
 * viewWillAppear
+* viewWillLayoutSubviews
+* layoutSubviews
+* viewDidLayoutSubviews
 * viewDidAppear
 * viewWillDisappear
 * viewDidDisappear
-* deinit
+* didReceiveMemoryWarning
 
 ## Design Patterns
 * Singleton -  single instance - UserDefaults, UIApplication, NSNotificationCenter. Pros and Cons - Easy to use, can be dangerous because of it due to vulnerability to changes from multiple access points.
