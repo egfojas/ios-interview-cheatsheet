@@ -18,8 +18,21 @@ A compilation of iOS topics
 ## Concurrent Programming
 ### GCD (Grand Central Dispatch)
 * GCD is a mechanism that allows concurrent programming via the use of DispatchQueues
-⋅⋅⋅Concurrent - executes code blocks concurrently, meaning order of execution and completion of codeblocks are not guaranteed to be the same as order of when they were dispatched
-⋅⋅⋅Serial - executes code blocks serially, meaning, order of execution and completion of codeblocks are guarateed to follow the order of when they were dispatched
+* Concurrent - executes code blocks concurrently, meaning order of execution and completion of codeblocks are not guaranteed to be the same as order of when they were dispatched
+* Serial - executes code blocks serially, meaning, order of execution and completion of codeblocks are guarateed to follow the order of when they were dispatched
+ #### Three main types of queues:
+1. Main queue: runs on the main thread and is a serial queue.
+2. Global queues: concurrent queues that are shared by the whole system. There are four such queues with different priorities : high, default, low, and background. The background priority queue has the lowest priority and is throttled in any I/O activity to minimize negative system impact.
+3. Custom queues: queues that you create which can be serial or concurrent. Requests in these queues actually end up in one of the global queues.
+ #### QoS (Quality of Service)
+1. User-interactive: This represents tasks that must complete immediately in order to provide a nice user experience. Use it for UI updates, event handling and small workloads that require low latency. The total amount of work done in this class during the execution of your app should be small. This should run on the main thread.
+2. User-initiated: The user initiates these asynchronous tasks from the UI. Use them when the user is waiting for immediate results and for tasks required to continue user interaction. They execute in the high priority global queue.
+3. Utility: This represents long-running tasks, typically with a user-visible progress indicator. Use it for computations, I/O, networking, continuous data feeds and similar tasks. This class is designed to be energy efficient. This will get mapped into the low priority global queue.
+4. Background: This represents tasks that the user is not directly aware of. Use it for prefetching, maintenance, and other tasks that don’t require user interaction and aren’t time-sensitive. This will get mapped into the background priority global queue.
+ #### Asynchronous vs Synchronous
+* Synchronous blocks the calling queue and returns the control to it after executing the task. While Asynchronous does not block the calling queue and returns the control immediately without waiting for the task to complete.
+
+* Dispatch Barrier - a DispatchWorkitem with a flag set to .barrier can be used to make a concurrent queue behave like a serial queue. All Tasks before the barrier must be completed first before executing work blocks submitted after the barrier.
 
 ### OperationQueue
 * OperationQueue is a mechanism that allows concurrent programming via the use of Operation and OperationQueues
