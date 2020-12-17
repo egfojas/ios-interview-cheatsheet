@@ -1,3 +1,4 @@
+
 # ios-interview-cheatsheet
 A compilation of iOS topics
 
@@ -19,34 +20,48 @@ A compilation of iOS topics
 * Blocks
 
 ## Swift
-* Struct - 
- * Value type 
- * Immutable  
- * https://docs.swift.org/swift-book/LanguageGuide/ClassesAndStructures.html
-* Class - 
- * Reference type 
- * Mutable
- * Can inherit from another class.
- * Classes allows type checking (keyword is) to check if an instance is of a subclass type.
- * Has deinitializers
- * Can have more than 1 reference count
- * https://docs.swift.org/swift-book/LanguageGuide/ClassesAndStructures.html
-* Any - 
-* AnyObject - 
-* Enumerations - Raw value, associated value
-* Protocols - can inherit, can be extended, can be given default implementation
-* Generics - 
-* Associated Type -
-* Opaque Type -
-* Property Wrappers - cool stuff (auto capitalised, auto save) wrapped value
+* Struct
+	 * Value type 
+	 * Immutable  
+	 * https://docs.swift.org/swift-book/LanguageGuide/ClassesAndStructures.html
+* Class
+	 * Reference type 
+	 * Mutable
+	 * Can inherit from another class.
+	 * Classes allows type checking (keyword is) to check if an instance is of a subclass type.
+	 * Has deinitializers
+	 * Can have more than 1 reference count
+	 * https://docs.swift.org/swift-book/LanguageGuide/ClassesAndStructures.html
+* Any vs AnyObject 
+	* Any
+	* AnyObject 
+* Enumerations
+	* Raw value
+	* Associated value
+* Protocols
+	* can inherit, can be extended, can be given default implementation
+* Generics
+	*  
+* Associated Type
+	* 
+* Opaque Type
+	* 
+* Property Wrappers
+	* cool stuff (auto capitalised, auto save) wrapped value
 
 ## Objective-C
 * @dynamic - getter/setter will be provided run time //assoc object
 * @synthesize - compiler generate getter/setter. Allows us to access a property via `self.` without the need to explicitly provide getter and setter functions.
 * Self vs _ =  `_property` direct instance, `self.property` calls getter and setter functions
-* Categories - add methods to existing class https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/CustomizingExistingClasses/CustomizingExistingClasses.html
-* Associated object - allows developers to add custom properties to existing classes in categories. https://nshipster.com/associated-objects/
-* Swizzling - Method swizzling is the process of changing the implementation of an existing selector. It’s a technique made possible by the fact that method invocations in Objective-C can be changed at runtime, by changing how selectors are mapped to underlying functions in a class’s dispatch table. https://nshipster.com/method-swizzling/
+* Categories - 
+	* add methods to existing class 
+	* https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/CustomizingExistingClasses/CustomizingExistingClasses.html
+* Associated object - 
+	* allows developers to add custom properties to existing classes in categories.
+	* https://nshipster.com/associated-objects/
+* Swizzling - 
+	* Method swizzling is the process of changing the implementation of an existing selector. It’s a technique made possible by the fact that method invocations in Objective-C can be changed at runtime, by changing how selectors are mapped to underlying functions in a class’s dispatch table. 
+	* https://nshipster.com/method-swizzling/
 
 ## Memory Management
 ### ARC (Automatic Reference Counting)
@@ -140,8 +155,13 @@ A compilation of iOS topics
 ### SSL Pinning
 
 ## SOLID Principles
-* Single Responsibility - A class should have one and only one reason to change, meaning that a class should have only one job.
-* Open-Close Principle - Objects or entities should be open for extension, but closed for modification.
-* Liskov Substitution - Let q(x) be a property provable about objects of x of type T. Then q(y) should be provable for objects y of type S where S is a subtype of T
-* Interface Segregation - A client should never be forced to implement an interface that it doesn’t use or clients shouldn’t be forced to depend on methods they do not use.
-* Dependency Inversion - Entities must depend on abstractions not on concretions. It states that the high level module must not depend on the low level module, but they should depend on abstractions.
+* Single Responsibility
+	* A class should have one and only one reason to change, meaning that a class should have only one job.
+* Open-Close Principle
+	* Objects or entities should be open for extension, but closed for modification.
+* Liskov Substitution
+	* Let q(x) be a property provable about objects of x of type T. Then q(y) should be provable for objects y of type S where S is a subtype of T
+* Interface Segregation
+	* A client should never be forced to implement an interface that it doesn’t use or clients shouldn’t be forced to depend on methods they do not use.
+* Dependency Inversion
+	* Entities must depend on abstractions not on concretions. It states that the high level module must not depend on the low level module, but they should depend on abstractions.
