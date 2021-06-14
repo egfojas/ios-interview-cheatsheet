@@ -19,6 +19,9 @@ A compilation of iOS topics
 * Dynamic dispatch - decides runtime which method or function to invoke
 * Blocks
 
+## Dynamic vs Static Dispatch
+
+
 ## Swift
 * Struct
 	 * Value type 
@@ -165,3 +168,19 @@ A compilation of iOS topics
 	* A client should never be forced to implement an interface that it doesn’t use or clients shouldn’t be forced to depend on methods they do not use.
 * Dependency Inversion
 	* Entities must depend on abstractions not on concretions. It states that the high level module must not depend on the low level module, but they should depend on abstractions.
+
+
+## Dependency Management
+* Cocoapods
+* Carthage
+* Swift Package Manager
+
+## Fastlane
+
+## Version Control
+* Git
+* Git flows
+	* gitflow
+	* trunk-based development 
+
+## Agile Development
